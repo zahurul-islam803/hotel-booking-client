@@ -7,7 +7,7 @@ const Slider = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="absolute top-[20%] left-[30%] right-[30%] flex flex-col justify-center items-center space-y-6"
+          className="absolute top-[30%] left-[30%] right-[30%] flex flex-col justify-center items-center space-y-6"
         >
           <h2 className="text-4xl font-bold text-success uppercase">
             Hotel & Resort

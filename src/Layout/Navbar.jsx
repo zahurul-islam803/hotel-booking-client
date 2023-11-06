@@ -25,8 +25,8 @@ const Navbar = () => {
           </svg>
         </label>
       </div>
-      <div className="flex-1 text-2xl font-bold text-secondary">
-        HotelHavenHub
+      <div className="flex-1 text-3xl font-bold text-secondary">
+        <span className="text-success">H</span>otelHavenHub
       </div>
       <div className="flex-none hidden lg:block">
         <div className="flex items-center gap-2">
