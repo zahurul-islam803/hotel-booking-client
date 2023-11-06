@@ -1,6 +1,8 @@
 const Banner = () => {
   return (
     <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
       className="hero min-h-[80vh]"
       style={{
         backgroundImage: "url(https://i.ibb.co/XYwPqvB/hotel-8.jpg)",

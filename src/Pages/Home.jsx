@@ -2,6 +2,7 @@
 import { Helmet } from "react-helmet";
 import Slider from "../Components/Slider";
 import Banner from "../Components/banner";
+import Newsletter from "../Components/Newsletter";
 
 const Home = () => {
   return (
@@ -19,6 +20,9 @@ const Home = () => {
           Special Offers and Promotions
         </h1>
         <Banner></Banner>
+      </div>
+      <div>
+        <Newsletter></Newsletter>
       </div>
     </>
   );
