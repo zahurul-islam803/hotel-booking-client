@@ -25,7 +25,7 @@ const Navbar = () => {
           </svg>
         </label>
       </div>
-      <div className="flex-1 text-xl font-bold text-secondary">
+      <div className="flex-1 text-2xl font-bold text-secondary">
         HotelHavenHub
       </div>
       <div className="flex-none hidden lg:block">
@@ -60,7 +60,7 @@ const Navbar = () => {
             <label tabIndex={0} className="cursor-pointer">
               <div className="avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                  <img src="https://i.ibb.co/VMCyz0v/avatar.jpg" />
                 </div>
               </div>
             </label>
