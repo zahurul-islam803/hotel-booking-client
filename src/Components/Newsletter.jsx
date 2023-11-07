@@ -6,7 +6,7 @@ const Newsletter = () => {
       <footer
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% footer p-4 mt-24 mb-20 rounded-lg bg-gray-300 text-white"
+        className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% footer px-4 py-8 mt-24 mb-20 rounded-lg bg-gray-300 text-white"
       >
         <p className="mt-4 pr-14">
           Subscribe to our newsletter for the latest updates, exclusive deals,
