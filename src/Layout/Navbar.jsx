@@ -1,7 +1,20 @@
 import { NavLink } from "react-router-dom";
 import Container from "../Components/CommonUi/Container";
+import { useContext } from "react";
+import { AuthContext } from "../Components/Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () =>{
+    logOut()
+    .then(()=>{
+      toast.success("LogOut Successfully");
+    })
+    .catch(err => {
+      toast.success(err.message);
+    })
+  }
   return (
     <Container>
       <div className="flex-none lg:hidden">
@@ -47,28 +60,32 @@ const Navbar = () => {
           >
             Rooms
           </NavLink>
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
-            }
-          >
-            Login
-          </NavLink>
-
-          <div className="dropdown dropdown-end ">
-            <label tabIndex={0} className="cursor-pointer">
-              <div className="avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://i.ibb.co/VMCyz0v/avatar.jpg" />
-                </div>
+          {user?.email ? (
+            <div className="flex gap-2 dropdown dropdown-end ">
+              <div
+                onClick={handleLogOut}
+                className="cursor-pointer px-4 py-2 font-medium text-lg hover:bg-gray-400 rounded-lg"
+              >
+                Logout
               </div>
-            </label>
-            <div
-              tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-            ></div>
-          </div>
+              <label tabIndex={0} className="cursor-pointer">
+                <div className="avatar">
+                  <div className="w-10 rounded-full">
+                    <img src="https://i.ibb.co/VMCyz0v/avatar.jpg" />
+                  </div>
+                </div>
+              </label>
+            </div>
+          ) : (
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
+              }
+            >
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </Container>
