@@ -5,7 +5,7 @@ const Banner = () => {
       data-aos-duration="1000"
       className="hero min-h-[80vh]"
       style={{
-        backgroundImage: "url(https://i.ibb.co/XYwPqvB/hotel-8.jpg)",
+        backgroundImage: "url(https://i.ibb.co/vs7DC2d/hotel-17.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>

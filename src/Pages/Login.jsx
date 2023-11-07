@@ -6,8 +6,10 @@ import toast from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../Components/Provider/AuthProvider";
 import { useState } from "react";
+import useAxios from "../Hooks/useAxios";
 const Login = () => {
    const { signIn } = useContext(AuthContext);
+   const axios = useAxios();
 
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
@@ -17,7 +19,9 @@ const Login = () => {
      e.preventDefault();
      const toastId = toast.loading("User Login in ...");
      try {
-       await signIn(email, password);
+       const user = await signIn(email, password);
+       const res = await axios.post("/auth/access-token", {email: user.user.email});
+       console.log(res)
        toast.success("User Login", { id: toastId });
        navigate("/");
      } catch (error) {
