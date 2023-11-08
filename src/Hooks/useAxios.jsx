@@ -3,18 +3,18 @@ import { useContext } from "react";
 import { AuthContext } from "../Components/Provider/AuthProvider";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api/v1",
+  baseURL: "https://hotel-booking-server-delta.vercel.app",
   withCredentials: true,
 });
 
 const useAxios = () => {
-  const {logOut} = useContext(AuthContext);
+  const { logOut } = useContext(AuthContext);
   instance.interceptors.response.use(
     function (response) {
       return response;
     },
     function (error) {
-      if(error.response.status === 401 || error.response.status === 403){
+      if (error.response.status === 401 || error.response.status === 403) {
         logOut();
       }
     }

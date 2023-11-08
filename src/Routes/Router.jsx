@@ -33,15 +33,19 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-       {
-        path: 'update-booking/:id',
+      {
+        path: "update-booking/:id",
         element: <UpdateBooking></UpdateBooking>,
-        loader: ({params})=> fetch(`http://localhost:5000/api/v1/user/update-booking/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://hotel-booking-server-delta.vercel.app/user/update-booking/${params.id}`
+          ),
       },
       {
         path: "roomDetails/:id",
         element: <RoomDetails></RoomDetails>,
-        loader: () => fetch(`http://localhost:5000/api/v1/rooms`),
+        loader: () =>
+          fetch(`https://hotel-booking-server-delta.vercel.app/rooms`),
       },
       {
         path: "room-booking/:id",

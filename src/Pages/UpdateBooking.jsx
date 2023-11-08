@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import Container from "../Components/CommonUi/Container";
-import { useLoaderData} from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
 
@@ -10,32 +10,39 @@ const UpdateBooking = () => {
   const [date, setDate] = useState("");
   const [timeSlot, setTimeSlot] = useState("");
   const [address, setAddress] = useState("");
- const data = useLoaderData();
+  const data = useLoaderData();
   const updateInfo = {
-    customerName, email, date, timeSlot, address
-  }
-  const handleUpdate = (e) =>{
+    customerName,
+    email,
+    date,
+    timeSlot,
+    address,
+  };
+  const handleUpdate = (e) => {
     e.preventDefault();
-        fetch(`http://localhost:5000/api/v1/user/update/${data._id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(updateInfo),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.acknowledged) {
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Product update successfully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            }
+    fetch(
+      `https://hotel-booking-server-delta.vercel.app/user/update/${data._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateInfo),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Product update successfully",
+            showConfirmButton: false,
+            timer: 1500,
           });
-  }
+        }
+      });
+  };
   return (
     <div className="my-10">
       <Helmet>
@@ -113,11 +120,7 @@ const UpdateBooking = () => {
             </div>
 
             <div className="form-control mt-2">
-              <button
-                type="submit"
-                
-                className="btn btn-info"
-              >
+              <button type="submit" className="btn btn-info">
                 Update Date
               </button>
             </div>
