@@ -8,7 +8,7 @@ import { AuthContext } from "../Components/Provider/AuthProvider";
 import { useState } from "react";
 import useAxios from "../Hooks/useAxios";
 const Login = () => {
-   const { signIn } = useContext(AuthContext);
+   const { signIn, logOut } = useContext(AuthContext);
    const axios = useAxios();
 
    const [email, setEmail] = useState("");
@@ -21,9 +21,12 @@ const Login = () => {
      try {
        const user = await signIn(email, password);
        const res = await axios.post("/auth/access-token", {email: user.user.email});
-       console.log(res)
-       toast.success("User Login", { id: toastId });
-       navigate("/");
+       if(res.data.success){
+         toast.success("User Login", { id: toastId });
+         navigate("/");
+       }else{
+          logOut();
+       }
      } catch (error) {
        toast.error(error.message, { id: toastId });
      }

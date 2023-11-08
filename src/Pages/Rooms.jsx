@@ -59,9 +59,12 @@ const Rooms = () => {
                     alt="room"
                   />
                 </figure>
-                <p className="py-10 text-center text-xl font-semibold">
-                  Review: {room.review}
-                </p>
+                <div className="py-8 text-center">
+                  <p className="text-2xl font-semibold mb-2">
+                    Price: ${room.price}
+                  </p>
+                  <p className="text-xl font-semibold">Review: {room.review}</p>
+                </div>
               </div>
             </Link>
           ))}
