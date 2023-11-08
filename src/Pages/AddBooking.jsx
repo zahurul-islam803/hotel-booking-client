@@ -5,6 +5,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import {  useParams } from "react-router-dom";
 import moment from "moment/moment";
 import { Helmet } from "react-helmet";
+import toast from "react-hot-toast";
 
 const AddBooking = () => {
   const [customerName, setCustomerName] = useState("");
@@ -26,9 +27,11 @@ const AddBooking = () => {
     mutationKey: ['booking'],
     mutationFn: (bookingRoom)=>{
       return  axios.post("/user/add-booking", bookingRoom);
+    },
+    onSuccess(){
+      toast.success('Booking Added Successfully');
     }
   })
-console.log(mutate)
   return (
     <div style={{
           backgroundImage: "url(https://i.ibb.co/H7CZfCw/hotel-7.jpg)",

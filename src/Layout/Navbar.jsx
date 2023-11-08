@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           {/* Navbar menu content here */}
           <NavLink
-            to="/myBookings"
+            to="/user/bookings"
             className={({ isActive }) =>
               isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
             }
