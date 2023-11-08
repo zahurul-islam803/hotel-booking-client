@@ -129,7 +129,7 @@ const AddBooking = () => {
                 <button
                   type="button"
                   onClick={() =>
-                    mutate({ customerName, email, date, timeSlot, address })
+                    mutate({ customerName, email, date, timeSlot, address, id })
                   }
                   className="btn btn-info"
                 >

@@ -5,8 +5,10 @@ import { getAuth } from "firebase/auth";
 import app from "../Config/firebase.config";
 import Container from "../Components/CommonUi/Container";
 import toast from "react-hot-toast";
+import {  useNavigate } from "react-router-dom";
 
 const MyBookings = () => {
+  const navigate = useNavigate();
 const auth = getAuth(app);
   const axios = useAxios();
   const queryClient = useQueryClient();
@@ -18,16 +20,26 @@ const auth = getAuth(app);
       return res;
     }
   })
-  const {mutate} = useMutation({
-    mutationKey: ['booking'],
-    mutationFn: (id) =>{
-      return axios.delete(`/user/cancel-booking/${id}`);
-    },
-    onSuccess(){
-      toast.success('Deleted Successfully')
-      queryClient.invalidateQueries({queryKey: ['booking']});
-    }
-  })
+  //  if(isLoading){
+  //    return (
+  //      <div className="w-full h-[80vh] flex justify-center items-center">
+  //        <span className="loading loading-spinner text-accent loading-lg"></span>
+  //      </div>
+  //    );
+  //  }
+
+     const { mutate } = useMutation({
+       mutationKey: ["booking"],
+       mutationFn: (id) => {
+         return axios.delete(`/user/cancel-booking/${id}`);
+        },
+        onSuccess() {
+          toast.success("Deleted Successfully");
+          queryClient.invalidateQueries({ queryKey: ["booking"] });
+        },
+      });
+  
+   
   return (
     <Container>
       <Helmet>
@@ -36,17 +48,22 @@ const auth = getAuth(app);
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
-        {bookings?.data?.map((bookingItem) => (
-          <div
-            key={bookingItem._id}
-            className="card w-96 bg-base-100 shadow-xl"
-          >
+        {bookings?.data.map((bookingItem) => (
+          <div key={bookingItem._id} className="card bg-base-100 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">{bookingItem.date}</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-success">Update Date</button>
-                <button onClick={()=> mutate(bookingItem._id)} className="btn btn-info">Delete</button>
+              <p>{bookingItem.timeSlot}</p>
+              <div className="card-actions">
+                <button className="btn btn-info">Cancel Booking</button>
+               
+                  <button onClick={()=> navigate(`/update-booking/${bookingItem._id}`)} className="btn btn-success">Update Date</button>
+                
+                <button
+                  onClick={() => mutate(bookingItem._id)}
+                  className="btn btn-warning"
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </div>

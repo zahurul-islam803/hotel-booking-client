@@ -9,6 +9,7 @@ import Register from "../Pages/Register";
 import PrivateRoute from "../Components/PrivateRoute";
 import RoomDetails from "../Pages/RoomDetails";
 import AddBooking from "../Pages/AddBooking";
+import UpdateBooking from "../Pages/UpdateBooking";
 
 const router = createBrowserRouter([
   {
@@ -32,18 +33,23 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+       {
+        path: 'update-booking/:id',
+        element: <UpdateBooking></UpdateBooking>,
+        loader: ({params})=> fetch(`http://localhost:5000/api/v1/user/update-booking/${params.id}`),
+      },
       {
         path: "roomDetails/:id",
-        element: (
-          <PrivateRoute>
-            <RoomDetails></RoomDetails>
-          </PrivateRoute>
-        ),
+        element: <RoomDetails></RoomDetails>,
         loader: () => fetch(`http://localhost:5000/api/v1/rooms`),
       },
       {
         path: "room-booking/:id",
-        element: <AddBooking></AddBooking>,
+        element: (
+          <PrivateRoute>
+            <AddBooking></AddBooking>
+          </PrivateRoute>
+        ),
       },
     ],
   },
