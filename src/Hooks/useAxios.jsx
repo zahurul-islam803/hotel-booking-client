@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Components/Provider/AuthProvider";
 
 const instance = axios.create({
-  baseURL: "https://hotel-booking-server-delta.vercel.app",
+  baseURL: "https://hotel-booking-server-delta.vercel.app/api/v1",
   withCredentials: true,
 });
 

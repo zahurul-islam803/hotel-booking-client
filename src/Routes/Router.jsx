@@ -38,14 +38,14 @@ const router = createBrowserRouter([
         element: <UpdateBooking></UpdateBooking>,
         loader: ({ params }) =>
           fetch(
-            `https://hotel-booking-server-delta.vercel.app/user/update-booking/${params.id}`
+            `https://hotel-booking-server-delta.vercel.app/api/v1/user/update-booking/${params.id}`
           ),
       },
       {
         path: "roomDetails/:id",
         element: <RoomDetails></RoomDetails>,
         loader: () =>
-          fetch(`https://hotel-booking-server-delta.vercel.app/rooms`),
+          fetch(`https://hotel-booking-server-delta.vercel.app/api/v1/rooms`),
       },
       {
         path: "room-booking/:id",

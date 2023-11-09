@@ -21,7 +21,7 @@ const UpdateBooking = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     fetch(
-      `https://hotel-booking-server-delta.vercel.app/user/update/${data._id}`,
+      `https://hotel-booking-server-delta.vercel.app/api/v1/user/update/${data._id}`,
       {
         method: "PUT",
         headers: {
