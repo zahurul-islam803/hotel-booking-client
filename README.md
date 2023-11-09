@@ -1,8 +1,20 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Added at least 5 project features and functionality.
 
-Currently, two official plugins are available:
+- This website is an hotel booking website. All types of hotel rooms  are available here.
+- After registration and login, the user can see the booking page of the hotel and can place it in the cart.
+- User can put specific room in the cart and delete them as per his/her wish.
+- Home page and room details page can be seen without login on this website. To see all the pages, the user must register and login.
+- User can change his/her booking date.
+- Implement helmet package. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+---
+# Website Name: Entertainment and Media
+
+# website live link: https://hotelhavenhub.web.app
+## 🔗 https://readme.so/editor
+
+
+
