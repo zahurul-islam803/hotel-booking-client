@@ -9,6 +9,7 @@ import useAxios from "../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 
 const RoomDetails = () => {
+  const [review, setReview] = useState({});
   const {id} = useParams();
   const [rooms, setRooms] = useState({});
   const loadedData = useLoaderData();
@@ -28,6 +29,10 @@ const RoomDetails = () => {
        return res;
      },
    });
+   useEffect(()=>{
+    const reviewBooking = bookings?.data.find(reviewBook => reviewBook.id == rooms._id);
+    setReview(reviewBooking);
+   },[bookings,rooms])
    if (isLoading) {
      return (
        <div className="w-full h-[80vh] flex justify-center items-center">
@@ -55,12 +60,13 @@ const RoomDetails = () => {
           <h2 className="card-title">Availability: {rooms.availability}</h2>
           <h2 className="card-title">Special offer: {rooms.special_offer}</h2>
           <div className="card-actions justify-end">
-            <Link to={`/review/${rooms._id}`}>
+            {review ? <Link to={`/review/${review._id}`}>
               <button className="btn btn-success">Review Now</button>
-            </Link>
-            <Link to={`/room-booking/${rooms._id}`}>
-              <button className="btn btn-info">Book Now</button>
-            </Link>
+            </Link>:
+              <Link to={`/room-booking/${rooms._id}`}>
+                <button className="btn btn-info">Book Now</button>
+              </Link>
+            }
           </div>
         </div>
       </div>

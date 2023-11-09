@@ -11,6 +11,9 @@ const Review = () => {
           <title>Review-HotelHavenHub.com</title>
           <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
+        <div>
+          <h1></h1>
+        </div>
       </Container>
     </div>
   );
