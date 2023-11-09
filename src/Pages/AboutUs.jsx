@@ -86,7 +86,7 @@ const AboutUs = () => {
           craft delectable culinary experiences, each member of our team is
           integral to your stay.
         </p>
-        <div className="flex gap-6 justify-center items-center">
+        <div className="grid grid-col-span-1 md:grid-cols-2 gap-6">
           <div className="flex gap-2">
             <img
               src="https://i.ibb.co/7SLsh99/ceo.jpg"

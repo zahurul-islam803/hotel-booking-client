@@ -13,6 +13,7 @@ import UpdateBooking from "../Pages/UpdateBooking";
 import Review from "../Pages/Review";
 import Faq from "../Pages/Faq";
 import AboutUs from "../Pages/AboutUs";
+import ContactUs from "../Pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -72,7 +73,7 @@ const router = createBrowserRouter([
       },
       {
         path: "contact-us",
-        element: <AboutUs></AboutUs>
+        element: <ContactUs></ContactUs>
       }
     ],
   },

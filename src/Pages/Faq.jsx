@@ -13,7 +13,7 @@ const Faq = () => {
           <title>FAQ-HotelHavenHub.com</title>
           <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
-        <div className="collapse collapse-plus bg-base-200">
+        <div className="collapse collapse-plus">
           <input type="radio" name="my-accordion-3" checked="checked" />
           <div className="collapse-title text-xl font-medium">
             Where is this hotel located?
@@ -23,7 +23,8 @@ const Faq = () => {
             <p>Dhaka-Rajshahi High Way</p>
           </div>
         </div>
-        <div className="collapse collapse-plus bg-base-200">
+        <br />
+        <div className="collapse collapse-plus">
           <input type="radio" name="my-accordion-3" />
           <div className="collapse-title text-xl font-medium">
             What are the check-in and check-out times at Hotel HavenHub?
@@ -35,7 +36,8 @@ const Faq = () => {
             </p>
           </div>
         </div>
-        <div className="collapse collapse-plus bg-base-200">
+        <br />
+        <div className="collapse collapse-plus">
           <input type="radio" name="my-accordion-3" />
           <div className="collapse-title text-xl font-medium">
             Can I request a late check-out?
@@ -48,7 +50,8 @@ const Faq = () => {
             </p>
           </div>
         </div>
-        <div className="collapse collapse-plus bg-base-200">
+        <br />
+        <div className="collapse collapse-plus">
           <input type="radio" name="my-accordion-3" />
           <div className="collapse-title text-xl font-medium">
             Is there parking available at the hotel?
@@ -61,7 +64,8 @@ const Faq = () => {
             </p>
           </div>
         </div>
-        <div className="collapse collapse-plus bg-base-200">
+        <br />
+        <div className="collapse collapse-plus">
           <input type="radio" name="my-accordion-3" />
           <div className="collapse-title text-xl font-medium">
             Is breakfast included in the room rate?
