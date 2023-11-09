@@ -6,7 +6,9 @@
 - User can put specific room in the cart and delete them as per his/her wish.
 - Home page and room details page can be seen without login on this website. To see all the pages, the user must register and login.
 - User can change his/her booking date.
-- Implement helmet package. 
+- Implement helmet package.
+- User easily contact with us throw contact form.
+- User can see and gain some common information from our FAQ section.  
 
 
 
