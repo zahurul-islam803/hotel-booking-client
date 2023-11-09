@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         path: "roomDetails/:id",
         element: <RoomDetails></RoomDetails>,
         loader: () =>
-          fetch(`https://hotel-booking-server-delta.vercel.app/api/v1/rooms`),
+          fetch(`https://hotel-booking-server-delta.vercel.app/rooms`),
       },
       {
         path: "room-booking/:id",
