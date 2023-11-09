@@ -33,6 +33,7 @@ const Sidebar = () => {
       >
         MyBookings
       </NavLink>
+
       <NavLink
         to="/rooms"
         className={({ isActive }) =>
@@ -40,6 +41,30 @@ const Sidebar = () => {
         }
       >
         Rooms
+      </NavLink>
+      <NavLink
+        to="/FAQ"
+        className={({ isActive }) =>
+          isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
+        }
+      >
+        FAQ
+      </NavLink>
+      <NavLink
+        to="/about-us"
+        className={({ isActive }) =>
+          isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
+        }
+      >
+        About Us
+      </NavLink>
+      <NavLink
+        to="/contact-us"
+        className={({ isActive }) =>
+          isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
+        }
+      >
+        Contact Us
       </NavLink>
       {user?.email ? (
         <div className="flex flex-col justify-center items-center gap-2 dropdown dropdown-end ">

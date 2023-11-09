@@ -11,6 +11,8 @@ import RoomDetails from "../Pages/RoomDetails";
 import AddBooking from "../Pages/AddBooking";
 import UpdateBooking from "../Pages/UpdateBooking";
 import Review from "../Pages/Review";
+import Faq from "../Pages/Faq";
+import AboutUs from "../Pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +61,18 @@ const router = createBrowserRouter([
       {
         path: "add-review/:id",
         element: <Review></Review>
+      },
+      {
+        path: "FAQ",
+        element: <Faq></Faq>
+      },
+      {
+        path: "about-us",
+        element: <AboutUs></AboutUs>
+      },
+      {
+        path: "contact-us",
+        element: <AboutUs></AboutUs>
       }
     ],
   },

@@ -47,9 +47,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-               isActive
-                ? "btn btn-secondary btn-sm"
-                : "btn btn-ghost btn-sm"
+              isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
             }
           >
             Home
@@ -57,9 +55,7 @@ const Navbar = () => {
           <NavLink
             to="/user/bookings"
             className={({ isActive }) =>
-               isActive
-                ? "btn btn-secondary btn-sm"
-                : "btn btn-ghost btn-sm"
+              isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
             }
           >
             MyBookings
@@ -71,6 +67,30 @@ const Navbar = () => {
             }
           >
             Rooms
+          </NavLink>
+          <NavLink
+            to="/FAQ"
+            className={({ isActive }) =>
+              isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
+            }
+          >
+            FAQ
+          </NavLink>
+          <NavLink
+            to="/about-us"
+            className={({ isActive }) =>
+              isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
+            }
+          >
+            About Us
+          </NavLink>
+          <NavLink
+            to="/contact-us"
+            className={({ isActive }) =>
+              isActive ? "btn btn-secondary btn-sm" : "btn btn-ghost btn-sm"
+            }
+          >
+            Contact Us
           </NavLink>
           {user?.email ? (
             <div className="flex gap-2 dropdown dropdown-end ">

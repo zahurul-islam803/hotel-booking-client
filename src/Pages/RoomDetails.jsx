@@ -10,6 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const RoomDetails = () => {
   const [review, setReview] = useState({});
+  const [showReviewData, setShowReviewData] = useState({});
   const {id} = useParams();
   const [rooms, setRooms] = useState({});
   const loadedData = useLoaderData();
@@ -33,6 +34,17 @@ const RoomDetails = () => {
     const reviewBooking = bookings?.data.find(reviewBook => reviewBook.id == rooms._id);
     setReview(reviewBooking);
    },[bookings,rooms])
+     const { data: showReview } = useQuery({
+       queryKey: ["review"],
+       queryFn: async () => {
+         const res = await axios.get(`/user/review`);
+         return res;
+       },
+     });
+      useEffect(() => {
+        const findReview = showReview?.data.filter((reviews) => reviews.id == review._id);
+        setShowReviewData(findReview);
+      }, [review, showReview]);
    if (isLoading) {
      return (
        <div className="w-full h-[80vh] flex justify-center items-center">
@@ -59,14 +71,32 @@ const RoomDetails = () => {
           <h2 className="card-title">Room size: {rooms.room_size}</h2>
           <h2 className="card-title">Availability: {rooms.availability}</h2>
           <h2 className="card-title">Special offer: {rooms.special_offer}</h2>
+          <p>
+            Review:{" "}
+            {showReviewData.id ? (
+              <div className="flex gap-2">
+                <p>{showReviewData.userName}</p>
+                <p>{showReviewData.comment}</p>
+              </div>
+            ) : (
+              <p>No Review Yet..</p>
+            )}
+          </p>
+
           <div className="card-actions justify-end">
-            {review ? <Link to={`/add-review/${review._id}`}>
-              <button className="btn btn-success">Review Now</button>
-            </Link>:
-              <Link to={`/room-booking/${rooms._id}`}>
-                <button className="btn btn-info">Book Now</button>
-              </Link>
-            }
+            {!review?._id && (
+              <div>
+                {review ? (
+                  <Link to={`/add-review/${review._id}`}>
+                    <button className="btn btn-success">Review Now</button>
+                  </Link>
+                ) : (
+                  <Link to={`/room-booking/${rooms._id}`}>
+                    <button className="btn btn-info">Book Now</button>
+                  </Link>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import app from "../Config/firebase.config";
 import Container from "../Components/CommonUi/Container";
 import toast from "react-hot-toast";
 import {  useNavigate } from "react-router-dom";
+import moment from "moment";
 
 const MyBookings = () => {
   const navigate = useNavigate();
@@ -54,10 +55,21 @@ const auth = getAuth(app);
               <h2 className="card-title">{bookingItem.date}</h2>
               <p>{bookingItem.timeSlot}</p>
               <div className="card-actions">
-                <button className="btn btn-info">Cancel Booking</button>
-               
-                  <button onClick={()=> navigate(`/update-booking/${bookingItem._id}`)} className="btn btn-success">Update Date</button>
+                {
+                  bookingItem.date != `${moment().format("L")}` && <button
+                  className="btn btn-info"
+                  onClick={() => mutate(bookingItem._id)}
+                >
+                  Cancel Booking
+                </button>
+                }
                 
+                <button
+                  onClick={() => navigate(`/update-booking/${bookingItem._id}`)}
+                  className="btn btn-success"
+                >
+                  Update Date
+                </button>
                 <button
                   onClick={() => mutate(bookingItem._id)}
                   className="btn btn-warning"

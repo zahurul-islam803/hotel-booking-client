@@ -51,7 +51,10 @@ const UpdateBooking = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Container>
-        <div className="card w-full max-w-md shadow-2xl bg-base-100">
+        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-20">
+          Update Date
+        </h1>
+        <div className="card w-full mx-auto max-w-md shadow-2xl bg-base-100">
           <form onSubmit={handleUpdate} className="card-body">
             <div className="form-control">
               <label className="label">
