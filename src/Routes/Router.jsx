@@ -10,6 +10,7 @@ import PrivateRoute from "../Components/PrivateRoute";
 import RoomDetails from "../Pages/RoomDetails";
 import AddBooking from "../Pages/AddBooking";
 import UpdateBooking from "../Pages/UpdateBooking";
+import Review from "../Pages/Review";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "review",
+        element: <Review></Review>
+      }
     ],
   },
   {

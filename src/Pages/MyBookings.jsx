@@ -12,7 +12,7 @@ const MyBookings = () => {
 const auth = getAuth(app);
   const axios = useAxios();
   const queryClient = useQueryClient();
-  const {data: bookings} = useQuery({
+  const {data: bookings, isLoading} = useQuery({
     queryKey: ['booking'],
     queryFn: async() => {
       const email = auth.currentUser.email;
@@ -20,13 +20,6 @@ const auth = getAuth(app);
       return res;
     }
   })
-  //  if(isLoading){
-  //    return (
-  //      <div className="w-full h-[80vh] flex justify-center items-center">
-  //        <span className="loading loading-spinner text-accent loading-lg"></span>
-  //      </div>
-  //    );
-  //  }
 
      const { mutate } = useMutation({
        mutationKey: ["booking"],
@@ -39,6 +32,13 @@ const auth = getAuth(app);
         },
       });
   
+       if (isLoading) {
+         return (
+           <div className="w-full h-[80vh] flex justify-center items-center">
+             <span className="loading loading-spinner text-accent loading-lg"></span>
+           </div>
+         );
+       }
    
   return (
     <Container>

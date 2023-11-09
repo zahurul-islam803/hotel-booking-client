@@ -3,6 +3,10 @@ import { useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Container from "../Components/CommonUi/Container";
 import { Helmet } from "react-helmet";
+import { getAuth } from "firebase/auth";
+import app from "../Config/firebase.config";
+import useAxios from "../Hooks/useAxios";
+import { useQuery } from "@tanstack/react-query";
 
 const RoomDetails = () => {
   const {id} = useParams();
@@ -13,9 +17,28 @@ const RoomDetails = () => {
     setRooms(findRoom);
   }, [id, loadedData]);
 
+
+   const auth = getAuth(app);
+   const axios = useAxios();
+   const { data: bookings, isLoading } = useQuery({
+     queryKey: ["booking"],
+     queryFn: async () => {
+       const email = auth.currentUser.email;
+       const res = await axios.get(`/user/bookings?email=${email}`);
+       return res;
+     },
+   });
+   if (isLoading) {
+     return (
+       <div className="w-full h-[80vh] flex justify-center items-center">
+         <span className="loading loading-spinner text-accent loading-lg"></span>
+       </div>
+     );
+   }
+
+
   return (
     <Container>
-      
       <Helmet>
         <meta charSet="utf-8" />
         <title>Room-Details-HotelHavenHub.com</title>
@@ -32,7 +55,9 @@ const RoomDetails = () => {
           <h2 className="card-title">Availability: {rooms.availability}</h2>
           <h2 className="card-title">Special offer: {rooms.special_offer}</h2>
           <div className="card-actions justify-end">
-            <button className="btn btn-success">Review Now</button>
+            <Link to={`/review/${rooms._id}`}>
+              <button className="btn btn-success">Review Now</button>
+            </Link>
             <Link to={`/room-booking/${rooms._id}`}>
               <button className="btn btn-info">Book Now</button>
             </Link>
