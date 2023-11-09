@@ -60,7 +60,7 @@ const RoomDetails = () => {
           <h2 className="card-title">Availability: {rooms.availability}</h2>
           <h2 className="card-title">Special offer: {rooms.special_offer}</h2>
           <div className="card-actions justify-end">
-            {review ? <Link to={`/review/${review._id}`}>
+            {review ? <Link to={`/add-review/${review._id}`}>
               <button className="btn btn-success">Review Now</button>
             </Link>:
               <Link to={`/room-booking/${rooms._id}`}>
