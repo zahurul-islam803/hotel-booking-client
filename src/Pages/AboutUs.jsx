@@ -10,7 +10,7 @@ const AboutUs = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Container>
-        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-2">
+        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-5">
           About Hotel Haven Hub
         </h1>
         <p className="text-center mb-16">
@@ -19,7 +19,7 @@ const AboutUs = () => {
           that define who we are and what we stand for.
         </p>
         <div className="divider ">******</div>
-        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-2">
+        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-5">
           Our History
         </h1>
         <p className="text-center mb-16">
@@ -32,7 +32,7 @@ const AboutUs = () => {
           of excellence in the hotel industry.
         </p>
         <div className="divider ">******</div>
-        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-2">
+        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-5">
           Our Mission
         </h1>
         <p className="text-center mb-16">
@@ -43,7 +43,7 @@ const AboutUs = () => {
           come together to exceed your expectations.
         </p>
         <div className="divider ">******</div>
-        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-2">
+        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-5">
           Our Values
         </h1>
         <p className="my-2">
@@ -76,7 +76,7 @@ const AboutUs = () => {
           forefront of the industry.
         </p>
         <div className="divider ">******</div>
-        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-2">
+        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-5">
           Meet the Team
         </h1>
         <p className="text-center my-2 mb-16">
@@ -86,11 +86,11 @@ const AboutUs = () => {
           craft delectable culinary experiences, each member of our team is
           integral to your stay.
         </p>
-        <div className="grid grid-col-span-1 md:grid-cols-2 gap-6">
-          <div className="flex gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex items-center justify-center gap-3">
             <img
               src="https://i.ibb.co/7SLsh99/ceo.jpg"
-              className="rounded-full w-[400px] h-[400px]"
+              className="rounded-full w-[300px] h-[300px]"
               alt=""
             />
             <div>
@@ -105,10 +105,10 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center justify-center gap-3">
             <img
-              src="https://i.ibb.co/R0M98jJ/manager.jpg"
-              className="rounded-full w-[400px] h-[400px]"
+              src="https://i.ibb.co/80Kt8NY/officer.jpg"
+              className="rounded-full w-[300px] h-[300px]"
               alt=""
             />
             <div>
@@ -124,10 +124,10 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center justify-center gap-3">
             <img
-              src="https://i.ibb.co/pLQQBVg/head-chef.jpg"
-              className="rounded-full w-[400px] h-[400px]"
+              src="https://i.ibb.co/ZhX1FPJ/officer999.jpg"
+              className="rounded-full w-[300px] h-[300px]"
               alt=""
             />
             <div>
@@ -143,10 +143,10 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center justify-center gap-3">
             <img
               src="https://i.ibb.co/9Z0vMBW/manager-guest.jpg"
-              className="rounded-full w-[400px] h-[400px]"
+              className="rounded-full w-[300px] h-[300px]"
               alt=""
             />
             <div>

@@ -8,7 +8,7 @@ const MainLayout = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="w-full navbar bg-gray-300">
+        <div className="w-full navbar bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-300 to-90%">
           <Navbar></Navbar>
         </div>
         {/* Page content here */}
@@ -21,7 +21,7 @@ const MainLayout = ({ children }) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu p-4 w-80 min-h-full bg-gray-300">
+        <div className="menu p-4 w-80 min-h-full bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-300 to-90%">
           {/* Sidebar content here */}
           <Sidebar></Sidebar>
         </div>

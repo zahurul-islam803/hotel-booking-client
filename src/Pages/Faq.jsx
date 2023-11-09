@@ -3,11 +3,12 @@ import Container from "../Components/CommonUi/Container";
 
 const Faq = () => {
   return (
-    <div className="my-10">
+    <div className="my-2 bg-gray-200 pb-12">
       <Container>
-        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-20">
+        <h1 className="text-center text-5xl text-black font-bold mt-28 mb-5">
           FAQ
         </h1>
+        <p className="text-center mb-8 text-xl font-semibold">You can Know about our service and hotel by reading FAQ section below.</p>
         <Helmet>
           <meta charSet="utf-8" />
           <title>FAQ-HotelHavenHub.com</title>
