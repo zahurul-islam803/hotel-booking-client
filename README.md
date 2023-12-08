@@ -1,5 +1,5 @@
 
-# Added at least 5 project features and functionality.
+# Project features and functionality in details.
 
 - This website is an hotel booking website. All types of hotel rooms  are available here.
 - After registration and login, the user can see the booking page of the hotel and can place it in the cart.
@@ -13,10 +13,7 @@
 
 
 ---
-# Website Name: Entertainment and Media
-
-# website live link: https://hotelhavenhub.web.app
-## 🔗 https://readme.so/editor
+## 🔗 website live link: https://hotelhavenhub.web.app
 
 
 
