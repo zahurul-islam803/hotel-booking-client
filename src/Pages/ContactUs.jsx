@@ -85,7 +85,7 @@ const ContactUs = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Address</span>
+                    <span className="label-text">Message</span>
                   </label>
                   <textarea
                     rows={16}
