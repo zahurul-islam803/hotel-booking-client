@@ -1,7 +1,32 @@
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
 import contactAnimation from "../assets/contactAnimation.json";
 import Lottie from "lottie-react";
 const ContactUs = () => {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+
+      emailjs
+        .sendForm(
+          "service_641bf9g",
+          "template_9sg2dxc",
+          form.current,
+          "Dh133WsOz95zhEa8V"
+        )
+        .then(
+          () => {
+            toast.success("Successfully Sent Message");
+            e.target.reset();
+          },
+          (error) => {
+            toast.error(error.text);
+          }
+        );
+    };
   return (
     <div
       className="hero min-h-screen"
@@ -35,17 +60,16 @@ const ContactUs = () => {
               <h1 className="text-5xl font-bold">Contact Us</h1>
             </div>
             <div className="card px-[20px] pb-8 flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#28a2df]">
-              <form className="card-body">
+              <form ref={form} onSubmit={sendEmail} className="card-body">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Phone</span>
+                    <span className="label-text">Name</span>
                   </label>
                   <input
                     type="text"
-                    placeholder="Your Phone"
-                    name="phone"
+                    placeholder="Your Name"
+                    name="to_name"
                     className="input input-bordered"
-                    required
                   />
                 </div>
                 <div className="form-control">
@@ -55,9 +79,8 @@ const ContactUs = () => {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    name="email"
+                    name="from_name"
                     className="input input-bordered"
-                    required
                   />
                 </div>
                 <div className="form-control">
@@ -66,6 +89,7 @@ const ContactUs = () => {
                   </label>
                   <textarea
                     rows={16}
+                    name="message"
                     className="input input-bordered"
                   ></textarea>
                 </div>
@@ -78,16 +102,12 @@ const ContactUs = () => {
             </div>
           </div>
           <div className="max-w-[800px]">
-            <Lottie
-              animationData={contactAnimation}
-              loop={true}
-            ></Lottie>
+            <Lottie animationData={contactAnimation} loop={true}></Lottie>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
 
 export default ContactUs;
